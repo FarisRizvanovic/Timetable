@@ -16,9 +16,9 @@ class HomeViewModel(private val dao: SubjectDao) : ViewModel() {
     fun getDayOfTheWeek(): LiveData<String> {
         val calendar = Calendar.getInstance()
         val listOfDays =
-            listOf("Nedelja", "Ponedeljak", "Utorak", "Srijeda", "Cetvrtak", "Petak", "Subota")
+            listOf("Ponedeljak", "Ponedeljak", "Utorak", "Srijeda", "Cetvrtak", "Petak", "Ponedeljak")
         val day = listOfDays[calendar.get((Calendar.DAY_OF_WEEK)) - 1]
-        var todayID = when (day) {
+        val todayID = when (day) {
             "Ponedeljak" -> 1
             "Utorak" -> 2
             "Srijeda" -> 3

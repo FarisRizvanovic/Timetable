@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.faris.timetable.R
-import com.faris.timetable.database.AllSubjectDatabase
+import com.faris.timetable.database.SubjectDatabase
 import com.faris.timetable.databinding.FragmentEditBinding
 import com.faris.timetable.viewmodel.EditViewModel
 import com.faris.timetable.viewmodelfactory.EditViewModelFactory
@@ -26,7 +25,7 @@ class EditFragment : Fragment() {
         val view = binding.root
 
         val application = requireNotNull(this.activity).application
-        val allSubjectDao = AllSubjectDatabase.getInstance(application).allSubjectDao
+        val allSubjectDao = SubjectDatabase.getInstance(application).subjectDao
         val viewModelFactory = EditViewModelFactory(allSubjectDao)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(EditViewModel::class.java)
 
@@ -46,9 +45,9 @@ class EditFragment : Fragment() {
             Toast.makeText(context, test[0].subjectName, Toast.LENGTH_SHORT).show()
         }
 
-        viewModel.allSubjects.observe(viewLifecycleOwner, Observer{
-            Toast.makeText(context, it[0].subjectName, Toast.LENGTH_SHORT).show()
-        })
+//        viewModel.allSubjects.observe(viewLifecycleOwner, Observer{
+//            Toast.makeText(context, it[0].subjectName, Toast.LENGTH_SHORT).show()
+//        })
 
         return view
     }

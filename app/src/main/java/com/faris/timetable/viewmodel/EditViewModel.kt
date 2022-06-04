@@ -1,13 +1,12 @@
 package com.faris.timetable.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.faris.timetable.database.AllSubjectDao
+import com.faris.timetable.database.SubjectDao
 import com.faris.timetable.model.Subject
 import kotlinx.coroutines.launch
 
-class EditViewModel(val dao: AllSubjectDao) : ViewModel() {
+class EditViewModel(val dao: SubjectDao) : ViewModel() {
 
     val allSubjects = dao.getAllSubjects()
     var subjectName = ""
