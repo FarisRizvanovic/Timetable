@@ -1,13 +1,22 @@
 <resources>
     <string name="app_name">Raspored Casova</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="days">Dani</string>
     <string name="subjects">Predmeti</string>
     <string name="subject">Predmet</string>
     <string name="edit_subjects">Edit Subjects</string>
-    <string name="edit_subject_name">Unesite ime predmeta...</string>
+    <string name="edit_subject_name">Unesite ime predmeta…</string>
     <string name="edit_button_add">Dodaj</string>
     <string name="no_subject_name">Molimo unesite ime predmeta!</string>
     <string name="predmeti">Predmeti:</string>
+    <string name="ponedeljak">Ponedeljak:</string>
+    <string name="dodaj">Dodaj</string>
+    <string name="utorak">Utorak:</string>
+    <string name="srijeda">Srijeda:</string>
+    <string name="cetvrtak">Cetvrtak:</string>
+    <string name="petak">Petak:</string>
+    <string name="go_back">Go back</string>
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+    <string name="delete">Delete</string>
 </resources>

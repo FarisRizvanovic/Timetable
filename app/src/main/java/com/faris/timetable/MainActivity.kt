@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
-        return item.onNavDestinationSelected(navController)|| super.onOptionsItemSelected(item)
+        navController.navigate(R.id.action_timeTableFragment_to_editFragment)
+        return super.onOptionsItemSelected(item)
     }
 
     fun hideActionBar(){

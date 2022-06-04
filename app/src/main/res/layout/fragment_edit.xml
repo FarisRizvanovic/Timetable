@@ -15,12 +15,13 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="text|textCapSentences"
             android:layout_weight="1"
             android:id="@+id/edit_subject_name"
-            android:hint="@string/edit_subject_name" />
+            android:hint="@string/edit_subject_name"
+            android:autofillHints="" />
 
         <Button
             android:layout_width="wrap_content"
@@ -38,6 +39,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
+        android:focusable="false"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -53,6 +55,7 @@
         app:tint="@color/white"
         android:layout_margin="5dp"
         android:backgroundTint="@color/purple_500"
-        android:layout_gravity="end"/>
+        android:layout_gravity="end"
+        android:contentDescription="@string/next" />
 
 </LinearLayout>

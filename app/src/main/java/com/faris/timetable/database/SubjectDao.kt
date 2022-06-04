@@ -15,7 +15,7 @@ interface SubjectDao {
     suspend fun updateSubject(subjectWithDay: SubjectWithDay)
 
     @Delete
-    suspend fun deleteSubject(subjectWithDay: SubjectWithDay)
+    suspend fun deleteSubjectWithDay(subjectWithDay: SubjectWithDay)
 
     @Query("SELECT * FROM subject_table WHERE day_id = :todayId")
     fun findTodaySubjects(todayId: Int): LiveData<List<SubjectWithDay>>
@@ -29,4 +29,7 @@ interface SubjectDao {
 
     @Query("SELECT * FROM all_subjects_table")
     fun getAllSubjects() : LiveData<List<Subject>>
+
+    @Query("SELECT * FROM all_subjects_table WHERE subjectId = :subjectId")
+    fun getSubject(subjectId : Long): LiveData<Subject>
 }

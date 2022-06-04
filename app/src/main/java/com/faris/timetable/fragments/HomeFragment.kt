@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
         (activity as MainActivity).hideActionBar()
@@ -42,8 +42,6 @@ class HomeFragment : Fragment() {
 
         val adapter = HomeItemAdapter()
         binding.homeRecView.adapter = adapter
-
-
 
         viewModel.todaySubjects.observe(viewLifecycleOwner, Observer {
             it.let {

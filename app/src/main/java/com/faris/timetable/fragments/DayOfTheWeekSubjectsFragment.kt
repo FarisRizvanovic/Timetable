@@ -23,7 +23,7 @@ class DayOfTheWeekSubjectsFragment(val dayId : Int) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDayOfTheWeekSubjectsBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentDayOfTheWeekSubjectsBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val application = requireNotNull(this.activity).application

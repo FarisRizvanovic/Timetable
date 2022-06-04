@@ -22,7 +22,7 @@ class TimeTableFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentTimeTableBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentTimeTableBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val tabLayout = binding.tabLayout
