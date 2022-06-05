@@ -2,14 +2,31 @@
 <resources>
 <!--    lighter purple -->
 <!--    <color name="purple_200">#FFBB86FC</color>-->
-    <color name="purple_200">#FF99E1</color>
+    <color name="purple_200">#CDDC39</color>
 <!--    <color name="purple_500">#FF6200EE</color>-->
-    <color name="purple_500">#FF00B2</color>
+    <color name="purple_500">#8BC34A</color>
 <!--    <color name="purple_700">#FF3700B3</color>-->
-    <color name="purple_700">#DC1ABC</color>
+    <color name="purple_700">#4CAF50</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>
+
+
+<!--Segijeve boje-->
+<!--<resources>-->
+<!--&lt;!&ndash;    lighter purple &ndash;&gt;-->
+<!--&lt;!&ndash;    <color name="purple_200">#FFBB86FC</color>&ndash;&gt;-->
+<!--<color name="purple_200">#FF99E1</color>-->
+<!--&lt;!&ndash;    <color name="purple_500">#FF6200EE</color>&ndash;&gt;-->
+<!--<color name="purple_500">#FF00B2</color>-->
+<!--&lt;!&ndash;    <color name="purple_700">#FF3700B3</color>&ndash;&gt;-->
+<!--<color name="purple_700">#DC1ABC</color>-->
+<!--<color name="teal_200">#FF03DAC5</color>-->
+<!--<color name="teal_700">#FF018786</color>-->
+<!--<color name="black">#FF000000</color>-->
+<!--<color name="white">#FFFFFFFF</color>-->
+<!--<color name="transparent">#00FFFFFF</color>-->
+<!--</resources>-->

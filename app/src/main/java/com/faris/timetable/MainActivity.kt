@@ -2,6 +2,7 @@ package com.faris.timetable
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,7 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.faris.timetable.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        setSupportActionBar(binding.toolbar)
-        binding.toolbar.inflateMenu(R.menu.menu_add)
+//        setSupportActionBar(binding.toolbar)
+//        binding.toolbar.inflateMenu(R.menu.menu_add)
+
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -33,18 +35,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        navController.navigate(R.id.action_timeTableFragment_to_editFragment)
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        val navController = findNavController(R.id.nav_host_fragment)
+//        try {
+//            navController.navigate(R.id.action_timeTableFragment_to_editFragment)
+//        } catch (e: Exception) {
+//            Log.d("Exception: ", e.message.toString())
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
-    fun hideActionBar(){
-        binding.toolbar.visibility = View.GONE
-    }
-
-    fun showActionBar(){
-        binding.toolbar.visibility = View.VISIBLE
-    }
+//    fun hideActionBar() {
+//        binding.toolbar.visibility = View.GONE
+//    }
+//
+//    fun showActionBar() {
+//        binding.toolbar.visibility = View.VISIBLE
+//    }
 
 }

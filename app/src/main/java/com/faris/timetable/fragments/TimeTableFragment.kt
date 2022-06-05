@@ -5,6 +5,9 @@ import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.viewpager2.widget.ViewPager2
 import com.faris.timetable.MainActivity
 import com.faris.timetable.R
@@ -24,6 +27,9 @@ class TimeTableFragment : Fragment() {
     ): View? {
         _binding = FragmentTimeTableBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        setHasOptionsMenu(true)
 
         val tabLayout = binding.tabLayout
         val viewPager = binding.pager
@@ -46,10 +52,19 @@ class TimeTableFragment : Fragment() {
         return view
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_add, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        findNavController().navigate(R.id.action_timeTableFragment_to_editFragment)
+        return super.onOptionsItemSelected(item)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
-//        (activity as MainActivity).hideActionBar()
         _binding = null
     }
 

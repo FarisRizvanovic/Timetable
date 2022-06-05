@@ -15,8 +15,8 @@ import com.faris.timetable.databinding.FragmentDayOfTheWeekSubjectsBinding
 import com.faris.timetable.viewmodel.DayOfTheWeekSubjectsVIewModel
 import com.faris.timetable.viewmodelfactory.DayOfTheWeekSubjectsViewModelFactory
 
-class DayOfTheWeekSubjectsFragment(val dayId : Int) : Fragment() {
-    private var _binding : FragmentDayOfTheWeekSubjectsBinding? = null
+class DayOfTheWeekSubjectsFragment(private val dayId: Int = 1) : Fragment() {
+    private var _binding: FragmentDayOfTheWeekSubjectsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,7 +29,8 @@ class DayOfTheWeekSubjectsFragment(val dayId : Int) : Fragment() {
         val application = requireNotNull(this.activity).application
         val dao = SubjectDatabase.getInstance(application).subjectDao
         val viewModelFactory = DayOfTheWeekSubjectsViewModelFactory(dao, dayId)
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(DayOfTheWeekSubjectsVIewModel::class.java)
+        val viewModel =
+            ViewModelProvider(this, viewModelFactory).get(DayOfTheWeekSubjectsVIewModel::class.java)
 
         val adapter = HomeItemAdapter()
         binding.subjectsEachDayRec.adapter = adapter

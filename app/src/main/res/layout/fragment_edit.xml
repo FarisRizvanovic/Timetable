@@ -5,57 +5,86 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="16dp"
     tools:context=".fragments.EditFragment">
 
-
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize" />
 
-        <EditText
-            android:layout_width="0dp"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="0dp"
             android:layout_height="wrap_content"
-            android:inputType="text|textCapSentences"
-            android:layout_weight="1"
-            android:id="@+id/edit_subject_name"
-            android:hint="@string/edit_subject_name"
-            android:autofillHints="" />
+            android:orientation="vertical">
 
-        <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textCapSentences"
+                    android:layout_weight="1"
+                    android:id="@+id/edit_subject_name"
+                    android:hint="@string/edit_subject_name"
+                    android:autofillHints="" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_add_button"
+                    android:text="@string/edit_button_add"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/predmeti"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:focusable="false"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="100dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:id="@+id/edit_rec_view"/>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_add_button"
-            android:text="@string/edit_button_add"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="@string/predmeti"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:focusable="false"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        android:id="@+id/edit_rec_view"/>
+            android:id="@+id/fab"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@color/white"
+            android:layout_marginBottom="21dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/purple_500"
+            android:layout_gravity="end|bottom"
+            android:contentDescription="@string/next" />
+    </FrameLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fab"
-        android:src="@drawable/ic_right_arrow"
-        app:tint="@color/white"
-        android:layout_margin="5dp"
-        android:backgroundTint="@color/purple_500"
-        android:layout_gravity="end"
-        android:contentDescription="@string/next" />
+
+
+
+
 
 </LinearLayout>

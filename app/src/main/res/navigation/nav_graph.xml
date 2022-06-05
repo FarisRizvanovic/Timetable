@@ -32,7 +32,9 @@
         tools:layout="@layout/fragment_edit" >
         <action
             android:id="@+id/action_editFragment_to_editDaysFragmentFragment"
-            app:destination="@id/editDaysFragmentFragment" />
+            app:destination="@id/editDaysFragmentFragment"
+            app:popUpTo="@id/timeTableFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editDaysFragmentFragment"
@@ -42,6 +44,7 @@
         <action
             android:id="@+id/action_editDaysFragmentFragment_to_editFragment"
             app:destination="@id/editFragment"
+            app:popUpTo="@id/timeTableFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_editDaysFragmentFragment_to_timeTableFragment"

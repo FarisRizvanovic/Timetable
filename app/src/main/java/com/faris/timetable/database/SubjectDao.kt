@@ -9,10 +9,10 @@ import com.faris.timetable.model.SubjectWithDay
 interface SubjectDao {
 
     @Insert
-    suspend fun insertSubject(subjectWithDay: SubjectWithDay)
+    suspend fun insertSubjectWithDay(subjectWithDay: SubjectWithDay)
 
     @Update
-    suspend fun updateSubject(subjectWithDay: SubjectWithDay)
+    suspend fun updateSubjectWithDay(subjectWithDay: SubjectWithDay)
 
     @Delete
     suspend fun deleteSubjectWithDay(subjectWithDay: SubjectWithDay)

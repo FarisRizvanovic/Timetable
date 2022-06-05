@@ -1,6 +1,5 @@
 package com.faris.timetable.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.faris.timetable.database.SubjectDao
@@ -20,12 +19,13 @@ class EditViewModel(val dao: SubjectDao) : ViewModel() {
         }
     }
 
-    fun deleteSubject(subjctId : Long){
+    fun deleteSubject(subjectId : Long){
         viewModelScope.launch {
-            val subject = Subject(subjectId = subjctId)
+            val subject = Subject(subjectId = subjectId)
             dao.deleteSubject(subject)
         }
     }
+
 
 
 

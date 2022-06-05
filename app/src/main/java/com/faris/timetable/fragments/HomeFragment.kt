@@ -27,8 +27,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        (activity as MainActivity).hideActionBar()
-
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         val application = requireNotNull(this.activity).application
@@ -50,11 +48,6 @@ class HomeFragment : Fragment() {
         })
 
         return view
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (activity as MainActivity).showActionBar()
     }
 
     override fun onDestroyView() {

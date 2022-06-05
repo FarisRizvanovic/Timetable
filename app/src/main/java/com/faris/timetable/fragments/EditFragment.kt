@@ -1,11 +1,11 @@
 package com.faris.timetable.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isNotEmpty
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -27,6 +27,9 @@ class EditFragment : Fragment() {
     ): View? {
         _binding = FragmentEditBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        setHasOptionsMenu(true)
 
         val application = requireNotNull(this.activity).application
         val allSubjectDao = SubjectDatabase.getInstance(application).subjectDao
