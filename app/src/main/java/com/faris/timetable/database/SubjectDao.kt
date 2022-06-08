@@ -1,7 +1,9 @@
 package com.faris.timetable.database
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.faris.timetable.model.Note
 import com.faris.timetable.model.Subject
 import com.faris.timetable.model.SubjectWithDay
 
@@ -20,16 +22,40 @@ interface SubjectDao {
     @Query("SELECT * FROM subject_table WHERE day_id = :todayId")
     fun findTodaySubjects(todayId: Int): LiveData<List<SubjectWithDay>>
 
-
     @Insert
     suspend fun insertSubject(subject: Subject)
 
     @Delete
     suspend fun deleteSubject(subject: Subject)
 
-    @Query("SELECT * FROM all_subjects_table")
-    fun getAllSubjects() : LiveData<List<Subject>>
+    @Query("SELECT * FROM all_subjects_table ORDER BY subjectId DESC")
+    fun getAllSubjects(): LiveData<List<Subject>>
 
     @Query("SELECT * FROM all_subjects_table WHERE subjectId = :subjectId")
-    fun getSubject(subjectId : Long): LiveData<Subject>
+    fun getSubject(subjectId: Long): LiveData<Subject>
+
+    @Insert
+    suspend fun insertNote(note: Note)
+
+    @Query("SELECt * FROM note_table WHERE subject_id=:subjectId ORDER BY noteId DESC")
+    fun getNoteForThisSubject(subjectId: Long) : LiveData<List<Note>>
+
+    @Query("SELECT * FROM note_table WHERE noteId=:noteId")
+    suspend fun getNoteById(noteId : Long) : Note
+
+    @Update
+    suspend fun updateNote(note: Note)
+
+    @Delete
+    suspend fun deleteNote(note: Note)
+
+
+//    @Query("SELECT COUNT(noteId) FROM note_table WHERE subject_id= :subjectId")
+//    fun getNumberOfNotes(subjectId: Long): LiveData<Int>
+
+//        i will use this one
+//    @Query("SELECT note_body, COUNT(*) AS 'num' FROM note_table GROUP BY subject_id")
+//    fun test(): LiveData<List<NoteCount>>
+
+
 }

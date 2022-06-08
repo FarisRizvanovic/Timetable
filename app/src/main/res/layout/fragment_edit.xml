@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragments.EditFragment">
 
@@ -15,76 +15,73 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:paddingBottom="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/edit_subject_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:id="@+id/edit_subject_name"
+                    android:autofillHints=""
                     android:hint="@string/edit_subject_name"
-                    android:autofillHints="" />
+                    android:inputType="text|textCapSentences" />
 
                 <Button
+                    android:id="@+id/edit_add_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/edit_add_button"
-                    android:text="@string/edit_button_add"/>
+                    android:text="@string/edit_button_add" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="@string/predmeti"/>
+                android:layout_marginHorizontal="10dp"
+                android:text="@string/predmeti"
+                android:textSize="30sp" />
 
-            <androidx.recyclerview.widget.RecyclerView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:focusable="false"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:clipToPadding="false"
-                android:paddingBottom="100dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="vertical"
-                android:id="@+id/edit_rec_view"/>
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/edit_rec_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
 
 
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fab"
-            android:src="@drawable/ic_right_arrow"
-            app:tint="@color/white"
-            android:layout_marginBottom="21dp"
-            android:layout_marginEnd="5dp"
-            android:backgroundTint="@color/purple_500"
             android:layout_gravity="end|bottom"
-            android:contentDescription="@string/next" />
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="21dp"
+            android:backgroundTint="@color/purple_500"
+            android:contentDescription="@string/next"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@color/white" />
     </FrameLayout>
-
-
-
-
-
 
 
 </LinearLayout>

@@ -9,6 +9,7 @@ import androidx.core.view.isNotEmpty
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.faris.timetable.R
 import com.faris.timetable.adapters.EditItemAdapter
 import com.faris.timetable.adapters.HomeItemAdapter
@@ -36,6 +37,11 @@ class EditFragment : Fragment() {
         val viewModelFactory = EditViewModelFactory(allSubjectDao)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(EditViewModel::class.java)
 
+        val adapter = EditItemAdapter{subjectId ->
+            viewModel.deleteSubject(subjectId)
+        }
+        binding.editRecView.adapter = adapter
+
         binding.editAddButton.setOnClickListener {
             if (binding.editSubjectName.text.toString() != ""){
                 viewModel.subjectName = binding.editSubjectName.text.toString()
@@ -47,25 +53,36 @@ class EditFragment : Fragment() {
 
         }
 
-        val adapter = EditItemAdapter{subjectId ->
-            viewModel.deleteSubject(subjectId)
-        }
-        binding.editRecView.adapter = adapter
-
         binding.fab.setOnClickListener {
            view.findNavController()
                .navigate(R.id.action_editFragment_to_editDaysFragmentFragment)
 
         }
 
+        adapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
+            override fun onChanged() {
+                binding.editRecView.smoothScrollToPosition(0)
+            }
+
+            override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
+                binding.editRecView.smoothScrollToPosition(0)
+            }
+        })
+
+
         viewModel.allSubjects.observe(viewLifecycleOwner, Observer{
             it.let {
                 adapter.submitList(it)
             }
+
         })
+
+
+
 
         return view
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

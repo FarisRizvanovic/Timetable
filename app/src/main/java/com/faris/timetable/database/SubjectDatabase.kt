@@ -8,7 +8,7 @@ import com.faris.timetable.model.Note
 import com.faris.timetable.model.Subject
 import com.faris.timetable.model.SubjectWithDay
 
-@Database(entities = [Subject::class, SubjectWithDay::class, Note::class], version = 3, exportSchema = false)
+@Database(entities =[ Subject::class, SubjectWithDay::class, Note::class], version =1, exportSchema = false)
 abstract class SubjectDatabase : RoomDatabase() {
     abstract val subjectDao: SubjectDao
 

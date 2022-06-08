@@ -26,15 +26,6 @@
             android:textColor="@color/white"
             android:textSize="30sp" />
 
-<!--        <ImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:clickable="true"-->
-<!--            android:id="@+id/edit_delete_button"-->
-<!--            android:src="@drawable/ic_delete"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:focusable="true" />-->
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

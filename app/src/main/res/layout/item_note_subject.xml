@@ -32,11 +32,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 android:text="Broj zabiljeski: " />
 
             <TextView
                 android:id="@+id/notes_number_of_notes"
                 android:layout_width="wrap_content"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:text="5" />

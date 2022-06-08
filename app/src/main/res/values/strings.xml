@@ -20,4 +20,12 @@
     <string name="next">Next</string>
     <string name="delete">Delete</string>
     <string name="home_image">Home Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unesite_text_zabijeske">Unesite text zabijeske...</string>
+    <string name="dodaj_zabiljesku">Dodaj zabiljesku</string>
+    <string name="nazad">Nazad</string>
+    <string name="zavrseno">Zavrseno:</string>
+    <string name="zabiljeske">Zabiljeske:</string>
+    <string name="dodaj_zabiljesku_w_sem">Dodaj zabiljesku:</string>
 </resources>

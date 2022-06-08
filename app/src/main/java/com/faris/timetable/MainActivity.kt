@@ -1,13 +1,17 @@
 package com.faris.timetable
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.getSystemService
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.onNavDestinationSelected
@@ -23,10 +27,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-//        setSupportActionBar(binding.toolbar)
-//        binding.toolbar.inflateMenu(R.menu.menu_add)
-
-
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
@@ -34,23 +34,5 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setupWithNavController(navController)
 
     }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        try {
-//            navController.navigate(R.id.action_timeTableFragment_to_editFragment)
-//        } catch (e: Exception) {
-//            Log.d("Exception: ", e.message.toString())
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
-
-//    fun hideActionBar() {
-//        binding.toolbar.visibility = View.GONE
-//    }
-//
-//    fun showActionBar() {
-//        binding.toolbar.visibility = View.VISIBLE
-//    }
 
 }

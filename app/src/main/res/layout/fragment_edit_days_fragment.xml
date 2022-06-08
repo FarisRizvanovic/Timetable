@@ -15,15 +15,13 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
         android:layout_height="match_parent">
 
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,6 +31,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -44,8 +43,8 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:layout_width="wrap_content"
                         android:id="@+id/spinner_monday"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <Button
@@ -60,14 +59,18 @@
                     android:id="@+id/monday_rec_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="15dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -79,8 +82,8 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:layout_width="wrap_content"
                         android:id="@+id/spinner_tuesday"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <Button
@@ -97,12 +100,15 @@
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="15dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -114,8 +120,8 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:layout_width="wrap_content"
                         android:id="@+id/spinner_wednesday"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <Button
@@ -132,12 +138,15 @@
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="15dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -149,8 +158,8 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:layout_width="wrap_content"
                         android:id="@+id/spinner_thursday"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <Button
@@ -167,12 +176,15 @@
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:paddingBottom="15dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -184,8 +196,8 @@
                         android:textSize="25sp" />
 
                     <Spinner
-                        android:layout_width="wrap_content"
                         android:id="@+id/spinner_friday"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <Button
@@ -200,30 +212,32 @@
                     android:id="@+id/friday_rec_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="100dp"
                     android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="100dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </LinearLayout>
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_margin="5dp"
+                android:layout_margin="21dp"
                 android:backgroundTint="@color/purple_500"
+                android:contentDescription="@string/go_back"
                 android:src="@drawable/ic_left_arrow"
-                app:tint="@color/white"
-                android:contentDescription="@string/go_back" />
+                app:tint="@color/white" />
 
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -231,18 +245,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_margin="5dp"
+                android:layout_margin="21dp"
                 android:backgroundTint="@color/purple_500"
+                android:contentDescription="@string/finish"
                 android:src="@drawable/ic_done"
                 app:tint="@color/white"
-                android:contentDescription="@string/finish"
                 tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
 
     </FrameLayout>
-
-
 
 
 </LinearLayout>
