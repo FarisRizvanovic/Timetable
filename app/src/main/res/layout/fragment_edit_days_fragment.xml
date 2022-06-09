@@ -39,7 +39,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/ponedeljak"
+                        android:text="@string/monday"
                         android:textSize="25sp" />
 
                     <Spinner
@@ -51,7 +51,7 @@
                         android:id="@+id/button_monday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dodaj" />
+                        android:text="@string/add" />
 
                 </LinearLayout>
 
@@ -78,7 +78,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/utorak"
+                        android:text="@string/tuesday"
                         android:textSize="25sp" />
 
                     <Spinner
@@ -90,7 +90,7 @@
                         android:id="@+id/button_tuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dodaj" />
+                        android:text="@string/add" />
 
                 </LinearLayout>
 
@@ -116,7 +116,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/srijeda"
+                        android:text="@string/wednesday"
                         android:textSize="25sp" />
 
                     <Spinner
@@ -128,7 +128,7 @@
                         android:id="@+id/button_wednesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dodaj" />
+                        android:text="@string/add" />
 
                 </LinearLayout>
 
@@ -154,7 +154,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/cetvrtak"
+                        android:text="@string/thursday"
                         android:textSize="25sp" />
 
                     <Spinner
@@ -166,7 +166,7 @@
                         android:id="@+id/button_thursday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dodaj" />
+                        android:text="@string/add" />
 
                 </LinearLayout>
 
@@ -192,7 +192,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/petak"
+                        android:text="@string/friday"
                         android:textSize="25sp" />
 
                     <Spinner
@@ -204,7 +204,7 @@
                         android:id="@+id/button_friday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/dodaj" />
+                        android:text="@string/add" />
 
                 </LinearLayout>
 

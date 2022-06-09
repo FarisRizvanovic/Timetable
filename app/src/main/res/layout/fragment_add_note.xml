@@ -18,7 +18,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/dodaj_zabiljesku_w_sem"
+        android:text="@string/add_note_w_sem"
         android:textSize="30sp" />
 
 
@@ -36,7 +36,7 @@
             android:layout_height="0dp"
             android:gravity="start"
             android:layout_weight="1"
-            android:hint="@string/unesite_text_zabijeske"
+            android:hint="@string/enter_note_text"
             android:inputType="textMultiLine|textCapSentences" />
 
 
@@ -45,13 +45,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/dodaj_zabiljesku" />
+            android:text="@string/add_note" />
 
         <Button
             android:id="@+id/back_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nazad" />
+            android:text="@string/back" />
 
 
     </LinearLayout>

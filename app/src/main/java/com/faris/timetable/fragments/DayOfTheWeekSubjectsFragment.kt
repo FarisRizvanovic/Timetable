@@ -36,7 +36,17 @@ class DayOfTheWeekSubjectsFragment(private val dayId: Int = 1) : Fragment() {
         binding.subjectsEachDayRec.adapter = adapter
 
         viewModel.todaySubjects.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
+            it?.let {
+                adapter.submitList(it)
+                if (it.isNotEmpty()) {
+                    binding.addSubjectsByEditText.visibility = View.GONE
+                    binding.subjectsEachDayRec.visibility = View.VISIBLE
+                }
+                if (it.isEmpty()) {
+                    binding.addSubjectsByEditText.visibility = View.VISIBLE
+                    binding.subjectsEachDayRec.visibility = View.GONE
+                }
+            }
         })
 
         return view

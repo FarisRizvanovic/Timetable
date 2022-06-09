@@ -23,7 +23,7 @@ import com.faris.timetable.viewmodelfactory.SubjectNoteViewModelFactory
 
 
 class SubjectNotesFragment : Fragment() {
-    private var _binding : FragmentSubjectNotesBinding? = null
+    private var _binding: FragmentSubjectNotesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -44,14 +44,15 @@ class SubjectNotesFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         val dao = SubjectDatabase.getInstance(application).subjectDao
         val viewModelFactory = SubjectNoteViewModelFactory(subjectId, dao)
-        val viewModel = ViewModelProvider(this, viewModelFactory).get(SubjectNoteViewModel::class.java)
+        val viewModel =
+            ViewModelProvider(this, viewModelFactory).get(SubjectNoteViewModel::class.java)
 
-        val adapter = NotesItemAdapter{noteId, isChecked, deleteClicked ->
-            if (!deleteClicked){
+        val adapter = NotesItemAdapter { noteId, isChecked, deleteClicked ->
+            if (!deleteClicked) {
                 viewModel.isDone = isChecked
                 viewModel.shouldDelete = false
                 viewModel.getTask(noteId)
-            }else{
+            } else {
                 viewModel.shouldDelete = true
                 viewModel.getTask(noteId)
             }
@@ -62,11 +63,20 @@ class SubjectNotesFragment : Fragment() {
         viewModel.notesForThisSubject.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
+                if (it.isNotEmpty()) {
+                    binding.noNotesText.visibility = View.GONE
+                    binding.subjectNotesRecView.visibility = View.VISIBLE
+                }
+                if (it.isEmpty()) {
+                    binding.noNotesText.visibility = View.VISIBLE
+                    binding.subjectNotesRecView.visibility = View.GONE
+                }
             }
         })
 
         binding.fabAdd.setOnClickListener {
-            val action = SubjectNotesFragmentDirections.actionSubjectNotesFragmentToAddNoteFragment(subjectId)
+            val action =
+                SubjectNotesFragmentDirections.actionSubjectNotesFragmentToAddNoteFragment(subjectId)
             view.findNavController().navigate(action)
         }
 
@@ -76,9 +86,9 @@ class SubjectNotesFragment : Fragment() {
 
         viewModel.note.observe(viewLifecycleOwner, Observer {
             it?.let {
-                if (!viewModel.shouldDelete){
+                if (!viewModel.shouldDelete) {
                     viewModel.updateTask()
-                }else{
+                } else {
                     viewModel.deleteSubject()
                 }
 

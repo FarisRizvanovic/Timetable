@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Raspored Casova</string>
-
     <string name="days">Dani</string>
     <string name="subjects">Predmeti</string>
     <string name="subject">Predmet</string>
@@ -8,24 +7,27 @@
     <string name="edit_subject_name">Unesite ime predmeta…</string>
     <string name="edit_button_add">Dodaj</string>
     <string name="no_subject_name">Molimo unesite ime predmeta!</string>
-    <string name="predmeti">Predmeti:</string>
-    <string name="ponedeljak">Ponedeljak:</string>
-    <string name="dodaj">Dodaj</string>
-    <string name="utorak">Utorak:</string>
-    <string name="srijeda">Srijeda:</string>
-    <string name="cetvrtak">Cetvrtak:</string>
-    <string name="petak">Petak:</string>
+    <string name="subjects_w_semi">Predmeti:</string>
+    <string name="monday">Ponedeljak:</string>
+    <string name="add">Dodaj</string>
+    <string name="tuesday">Utorak:</string>
+    <string name="wednesday">Srijeda:</string>
+    <string name="thursday">Cetvrtak:</string>
+    <string name="friday">Petak:</string>
     <string name="go_back">Go back</string>
     <string name="finish">Finish</string>
     <string name="next">Next</string>
     <string name="delete">Delete</string>
     <string name="home_image">Home Image</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="unesite_text_zabijeske">Unesite text zabijeske...</string>
-    <string name="dodaj_zabiljesku">Dodaj zabiljesku</string>
-    <string name="nazad">Nazad</string>
-    <string name="zavrseno">Zavrseno:</string>
-    <string name="zabiljeske">Zabiljeske:</string>
-    <string name="dodaj_zabiljesku_w_sem">Dodaj zabiljesku:</string>
+    <string name="enter_note_text">Unesite text zabijeske…</string>
+    <string name="add_note">Dodaj zabiljesku</string>
+    <string name="back">Nazad</string>
+    <string name="finished">Zavrseno:</string>
+    <string name="note_w_semi">Zabiljeske:</string>
+    <string name="add_note_w_sem">Dodaj zabiljesku:</string>
+    <string name="no_notes">Nemate zabiljeski!</string>
+    <string name="nothing_for_today">Nemate nista za danas!</string>
+    <string name="add_subjects_placeholder_text">Dodajte predmet!</string>
+    <string name="add_subject_by_edit_click">Dodajte predmet klikom na olovkicu!</string>
+    <string name="no_subjects">Nemate predmete!</string>
 </resources>

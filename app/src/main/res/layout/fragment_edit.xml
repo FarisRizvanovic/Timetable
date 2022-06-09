@@ -51,16 +51,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="@string/predmeti"
+                android:text="@string/subjects_w_semi"
                 android:textSize="30sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/add_subjects_text"
+                    android:text="@string/add_subjects_placeholder_text"
+                    android:textSize="20sp" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/edit_rec_view"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

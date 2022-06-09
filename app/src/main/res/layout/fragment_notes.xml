@@ -13,6 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/no_subjects_for_notes_text"
+        android:text="@string/no_subjects"
+        android:textSize="20sp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes_rec_view"
@@ -20,6 +29,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:orientation="vertical"
+        android:visibility="gone"
         android:paddingStart="16dp"
         android:paddingTop="10dp"
         android:paddingEnd="16dp"

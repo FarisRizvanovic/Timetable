@@ -42,6 +42,14 @@ class NotesFragment : Fragment() {
         viewModel.allSubjects.observe(viewLifecycleOwner, Observer {
             it?.let{
                 adapter.submitList(it)
+                if(it.isNotEmpty()){
+                    binding.noSubjectsForNotesText.visibility = View.GONE
+                    binding.notesRecView.visibility = View.VISIBLE
+                }
+                if (it.isEmpty()){
+                    binding.noSubjectsForNotesText.visibility = View.VISIBLE
+                    binding.notesRecView.visibility = View.GONE
+                }
             }
         })
 

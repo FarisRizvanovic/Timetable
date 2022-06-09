@@ -69,16 +69,20 @@ class EditFragment : Fragment() {
             }
         })
 
-
         viewModel.allSubjects.observe(viewLifecycleOwner, Observer{
             it.let {
                 adapter.submitList(it)
+                if(it.isNotEmpty()){
+                    binding.addSubjectsText.visibility = View.GONE
+                    binding.editRecView.visibility = View.VISIBLE
+                }
+                if(it.isEmpty()){
+                    binding.addSubjectsText.visibility = View.VISIBLE
+                    binding.editRecView.visibility = View.GONE
+                }
             }
 
         })
-
-
-
 
         return view
     }

@@ -44,6 +44,15 @@ class HomeFragment : Fragment() {
         viewModel.todaySubjects.observe(viewLifecycleOwner, Observer {
             it.let {
                 adapter.submitList(it)
+                if(it.isNotEmpty()){
+                    binding.noSubjectsText.visibility = View.GONE
+                    binding.homeRecView.visibility = View.VISIBLE
+                }
+                if (it.isEmpty()){
+                    binding.noSubjectsText.visibility = View.VISIBLE
+                    binding.homeRecView.visibility = View.GONE
+                }
+
             }
         })
 

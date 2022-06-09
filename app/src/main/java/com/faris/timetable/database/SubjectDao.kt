@@ -10,6 +10,9 @@ import com.faris.timetable.model.SubjectWithDay
 @Dao
 interface SubjectDao {
 
+    @Query("DELETE FROM note_table WHERE subject_id=:subjectId")
+    suspend fun deleteNotesAfterSubject(subjectId: Long)
+
     @Insert
     suspend fun insertSubjectWithDay(subjectWithDay: SubjectWithDay)
 
@@ -48,14 +51,6 @@ interface SubjectDao {
 
     @Delete
     suspend fun deleteNote(note: Note)
-
-
-//    @Query("SELECT COUNT(noteId) FROM note_table WHERE subject_id= :subjectId")
-//    fun getNumberOfNotes(subjectId: Long): LiveData<Int>
-
-//        i will use this one
-//    @Query("SELECT note_body, COUNT(*) AS 'num' FROM note_table GROUP BY subject_id")
-//    fun test(): LiveData<List<NoteCount>>
 
 
 }

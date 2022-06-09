@@ -7,9 +7,19 @@
     android:orientation="vertical"
     tools:context=".fragments.DayOfTheWeekSubjectsFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/add_subjects_by_edit_text"
+        android:text="@string/add_subject_by_edit_click"
+        android:textSize="20sp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subjects_each_day_rec"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:orientation="vertical"

@@ -23,10 +23,8 @@ class EditViewModel(val dao: SubjectDao) : ViewModel() {
         viewModelScope.launch {
             val subject = Subject(subjectId = subjectId)
             dao.deleteSubject(subject)
+            dao.deleteNotesAfterSubject(subjectId)
         }
     }
-
-
-
 
 }
