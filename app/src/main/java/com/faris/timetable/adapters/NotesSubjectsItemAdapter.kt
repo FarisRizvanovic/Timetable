@@ -10,8 +10,10 @@ import com.faris.timetable.R
 import com.faris.timetable.model.Subject
 import com.faris.timetable.util.EditSubjectDiffItemCallback
 
-class NotesSubjectsItemAdapter(private val clickListener: (subjectId: Long, subjectName : String) -> Unit) :
-    ListAdapter<Subject, NotesSubjectsItemAdapter.NotesSubjectItemViewHolder>(EditSubjectDiffItemCallback()) {
+class NotesSubjectsItemAdapter(private val clickListener: (subjectId: Long, subjectName: String) -> Unit) :
+    ListAdapter<Subject, NotesSubjectsItemAdapter.NotesSubjectItemViewHolder>(
+        EditSubjectDiffItemCallback()
+    ) {
 
     class NotesSubjectItemViewHolder(private val rootView: CardView) :
         RecyclerView.ViewHolder(rootView) {
@@ -28,7 +30,7 @@ class NotesSubjectsItemAdapter(private val clickListener: (subjectId: Long, subj
             }
         }
 
-        fun bind(subject: Subject,clickListener: (subjectId: Long, subjectName : String) -> Unit) {
+        fun bind(subject: Subject, clickListener: (subjectId: Long, subjectName: String) -> Unit) {
             rootView.setOnClickListener {
                 clickListener(subject.subjectId, subject.subjectName)
             }
